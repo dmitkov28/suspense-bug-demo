@@ -9,7 +9,7 @@ export default function Search({ searchParams }) {
       <h1>Pokemon Search</h1>
       <SearchForm />
       <Suspense key={pokemon} fallback={<p>Fetching pokemon...</p>}>
-      <Pokemon key={pokemon} pokemon={pokemon} />
+        {pokemon && <Pokemon key={pokemon} pokemon={pokemon} />}
       </Suspense>
     </div>
   );
