@@ -14,8 +14,8 @@ const fetchKeywords = async (query) => {
   }
 };
 
-export default async function Keywords({ keyword: querySearchParam }) {
-  const data = await fetchKeywords(querySearchParam);
+export default async function Keywords({ keyword }) {
+  const data = await fetchKeywords(keyword);
   return (
     <div>
       {data.length > 0 ? JSON.stringify(data) : "Not found"}

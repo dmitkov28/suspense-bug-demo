@@ -7,8 +7,8 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const keywordQuery = Object.fromEntries(new FormData(e.target));
-    router.push("/keywords/search" + "?" + new URLSearchParams(keywordQuery));
+    const keyword = Object.fromEntries(new FormData(e.target));
+    router.push("/keywords/search" + "?" + new URLSearchParams(keyword));
   };
 
   return (
