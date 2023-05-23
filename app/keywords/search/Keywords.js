@@ -1,7 +1,8 @@
-const buildURL = (query) => `https://6vsezq9oh2.execute-api.eu-central-1.amazonaws.com/prod/api/v1/keywords?platform=duckduckgo&query=${query}&country=us&language=en`
+const buildURL = (keyword, platform, country, language) =>
+  `https://6vsezq9oh2.execute-api.eu-central-1.amazonaws.com/prod/api/v1/keywords?platform=${platform}&query=${keyword}&country=${country}&language=${language}`;
 
-const fetchKeywords = async (query) => {
-  const url = buildURL(query)
+const fetchKeywords = async (keyword, platform, country, language) => {
+  const url = buildURL(keyword, platform, country, language);
   try {
     const res = await fetch(url);
     if (!res.ok) {
@@ -14,11 +15,7 @@ const fetchKeywords = async (query) => {
   }
 };
 
-export default async function Keywords({ keyword }) {
-  const data = await fetchKeywords(keyword);
-  return (
-    <div>
-      {data.length > 0 ? JSON.stringify(data) : "Not found"}
-    </div>
-  );
+export default async function Keywords({ keyword, platform , country, language}) {
+  const data = await fetchKeywords(keyword, platform, country, language);
+  return <div>{data.length > 0 ? JSON.stringify(data) : "Not found"}</div>;
 }
