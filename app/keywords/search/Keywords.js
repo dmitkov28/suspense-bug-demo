@@ -1,4 +1,4 @@
-const buildURL = (keyword, platform, country, language) =>
+export const buildURL = (keyword, platform, country, language) =>
   `https://6vsezq9oh2.execute-api.eu-central-1.amazonaws.com/prod/api/v1/keywords?platform=${platform}&query=${keyword}&country=${country}&language=${language}`;
 
 const fetchKeywords = async (keyword, platform, country, language) => {

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Keywords from "./Keywords";
+import Keywords, { buildURL } from "./Keywords";
 import SearchForm from "./SearchForm";
 
 export default function Search({ searchParams }) {
@@ -8,7 +8,7 @@ export default function Search({ searchParams }) {
     <div>
       <h1>Keyword Search</h1>
       <SearchForm />
-      <Suspense key={keyword} fallback={<p>Fetching keyword...</p>}>
+      <Suspense key={buildURL(keyword, platform, country, language)} fallback={<p>Fetching keyword...</p>}>
         {keyword && <Keywords key={keyword} keyword={keyword} platform={platform} country={country} language={language} />}
       </Suspense>
     </div>
