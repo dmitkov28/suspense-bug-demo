@@ -1,5 +1,5 @@
 export const buildURL = (keyword, platform, country, language) =>
-  `https://6vsezq9oh2.execute-api.eu-central-1.amazonaws.com/prod/api/v1/keywords?platform=${platform}&query=${keyword}&country=${country}&language=${language}`;
+  `https://aunqsntwp5fzsl7vrehwocbjia0dupxj.lambda-url.eu-central-1.on.aws/api/v1/keywords?platform=${platform}&query=${keyword}&country=${country}&language=${language}`;
 
 const fetchKeywords = async (keyword, platform, country, language) => {
   const url = buildURL(keyword, platform, country, language);
