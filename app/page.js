@@ -11,6 +11,9 @@ export default function Home() {
       <li>
         <Link href={"/jsonplaceholder/search"}> JSON Placeholder</Link>
       </li>
+      <li>
+        <Link href={"/dummyjson/search"}> DummyJSON</Link>
+      </li>
     </ul>
   );
 }
