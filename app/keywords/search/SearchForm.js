@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { redirect } from 'next/navigation';
 
 export default function SearchForm() {
   const router = useRouter();
@@ -8,7 +9,7 @@ export default function SearchForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = Object.fromEntries(new FormData(e.target));
-    router.push("/keywords/search" + "?" + new URLSearchParams(search));
+    redirect("/keywords/search" + "?" + new URLSearchParams(search));
   };
 
   return (
